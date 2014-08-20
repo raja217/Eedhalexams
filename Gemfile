@@ -6,7 +6,7 @@ gem 'declarative_authorization','0.5.1'
 gem 'mysql','2.8.1'
 gem 'rake','0.8.7'
 gem 'win32-open3'
-gem 'mongrel','1.1.5'
+gem 'thin'
 gem 'rush','0.6.8'
 
 
