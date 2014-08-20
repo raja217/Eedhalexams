@@ -1,0 +1,34 @@
+<div id="content-header">
+  <%= image_tag("/images/admission/admission_page_logo.jpg") %>
+  <h1><%= t('student_details') %></h1>
+  <h3><%= t('view_details') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to "#{t('view_all')}", :action => "view_all" %></li>
+    <li><%= link_to "#{t('add_new')}", :action => "add" %></li>
+  </ul>
+</div>
+
+<div id="page-yield">
+  <div id="search_box_bg">
+    <% form_tag({:action => 'create_all'}, :multipart => true) do  %>
+      <div class ="label-field-pair" >
+        <%= "Add Users"%>
+        <%= file_field_tag "file" %>
+      </div></br>
+      <%= submit_tag "Upload", :class => "submit-button"%>
+    <% end %>
+  </div>
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <div id="view_all">
+
+  </div>
+  <div id="information"></div>
+
+</div>

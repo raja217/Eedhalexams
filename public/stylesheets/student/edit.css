@@ -1,0 +1,435 @@
+#question_text_field_bg {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #EEEEEE;
+    border: 1px solid #C6C6C6;
+    height: 228px;
+    margin: 24px 0 50px 0;
+    padding: 10px;
+    width: 750px;
+}
+
+.question_label_field p {
+    float: left;
+    color: #444444;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 13px;
+    width: 125px;
+    
+}
+.question_label_field label {
+    font-weight:600;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+}
+
+#question_text_field_bg input {
+    width:63px;
+    height:333px;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    padding-top:5px;
+    font-weight:bold;
+    font-size:25px;
+}
+
+#question_text_field_bg textarea {
+    background:transparent;
+    border:2px solid #ddd;
+}
+.mceIframeContainer iframe#content_ifr {
+    height: 170px !important;
+}
+
+#content_tbl{
+    height: 228px !important;
+    width: 750px !important;
+}
+tr.mceLast td.mceIframeContainer iframe{
+    height: 150px !important;
+}
+
+table.mceLayout{
+    height: 200px !important;
+}
+#admission1_form {
+    padding-left:50px;
+}
+#autofill-area .label-field-pair {
+    margin:0 95px 10px 0;
+}
+#admission1_form_vertical_block_left {
+    padding-bottom: 20px;
+}
+.label_field_pair {
+    width:600px;
+    height: 40px;
+    padding-top: 3px;
+}
+
+.label_field_pair label.label_for_gender {
+    font-weight:normal;
+    display:inline;
+}
+#admission1_form_vertical_block_right {
+    padding-bottom: 20px;
+}
+.label_field_pair1 {
+    width:285px;
+    float:left;
+    padding-top:40px;
+}
+.label_field_pair label {
+    padding-top: 10px;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.label_for_student_gender{
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+    width:200px;
+    float:left;
+}
+.student_gender_value{
+    width:300px;
+    float:left;
+    padding-top: 5px;
+}
+.label_field_pair label.label_for_gender {
+    font-weight:normal;
+    display:inline;
+}
+
+#name_field_block {
+    clear:both;
+    padding-bottom:20px;
+}
+#name_field_block .text-input-bg {
+    background : #eee;
+    float:left;
+    border : 1px solid #c6c6c6;
+    margin : 5px 0 0 10px;
+    width : 180px;
+    height:23px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    padding-top: 3px;
+}
+#name_field_block label {
+    font-weight:bold;
+    display:block;
+    margin-bottom:10px;
+}
+#name_field_block input {
+    background:transparent;
+    border:0;
+    color:#000;
+    padding-left:10px;
+    width:165px;
+}
+.label_field_pair input[type="text"] {
+    width:210px;height:28px;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    padding-top:5px;
+}
+.label_field_pair select {
+    background : #eee;
+    border: none;
+    height: auto;
+    margin: 5px 0 0 5px;
+    width: 220px;
+}
+.label_field_pair .label_for_gender {
+    margin:0;
+    display:block;
+    padding-top:5px;
+    padding-right:10px;
+    padding-left:10px;
+}
+#student_gender_true,
+#student_gender_false {
+    margin:0;
+    padding:0;
+    width:20px;
+    display:inline;
+    margin-bottom:10px;
+    display:block;
+    float:left;
+}
+#create_user {
+    display:inline;
+}
+#address_text_area {
+    width:232px;
+    height:162px;
+    background:#fff url(../../images/admission/address_area_bg.jpg) no-repeat;
+    margin-bottom:40px;
+}
+#student_address,
+#parent_detail_office_address {
+    padding-left:10px;
+    padding-top:5px;
+    width:222px;
+    height:162px;
+    border:none;
+    background:transparent;
+    color:#b00;
+    font-weight:bold;
+}
+#create_user_option {
+    display:inline;
+    margin:0px;
+    padding:0px;
+}
+.submit_button {
+    margin-top:30px;
+    margin-left:270px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #27292B;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    font-weight: bold;
+    font-size: 14px;
+    border:none;
+    font-family: arial;
+    cursor:pointer;
+}
+.submit_button:hover{
+    background:  #373B3F;
+}
+.submit_button3 {
+    margin-top:30px;
+    margin-left:50px;
+    float:left;
+}
+.text_display {
+    width:230px;
+    height:28px;
+    background:#fff url(../../images/admission/text_input.jpg) no-repeat;
+    margin-bottom:20px;
+    color:#b00;
+    font-weight:bold;
+    padding-left:10px;
+    padding-top:3px;
+}
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}
+#necessary-field-notification {
+    font-weight : bold;
+    padding : 10px 0 30px 0;
+}
+
+#create_user{
+    display:none;
+}
+.student_admission_date {
+    float:left;
+    height:80px;
+    width:450px;
+}
+.student_admission_date label {
+    color:#444444;
+    display:block;
+    float:left;
+    margin:0 0 10px;
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.student_admission_date p {
+    color:#444444;
+    display:block;
+    margin:0 0 10px;
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.text-input-bg-admission input  {
+    -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius:10px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    border:1px solid #C6C6C6;
+    height:17px;
+    margin:5px 0 0 10px;
+    padding:5px;
+    width:205px;
+    text-align: left;
+}
+input#student_image_file {
+    height:24px;
+}
+.sub-heading{
+    background:#9E0F15;
+    height: 1px;
+    border: none;
+    margin-bottom: 15px;
+}
+.span-sub-heading{
+    font-weight: bold;
+    padding-top:10px;
+}
+.label-underline{
+    background:  #eeeeee;
+    height: 1px;
+    border: none;
+}
+.label_for_student_gender{
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+    width:200px;
+    float:left;
+}
+.student_gender_value{
+    width:300px;
+    float:left;
+    padding-top: 5px;
+}
+.label_field_pair label.label_for_gender {
+    font-weight:normal;
+    display:inline;
+}
+
+.text-input-bg-admission input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+
+input#student_photo{
+    height: 28px;
+}
+#admission1-form {
+    padding-left:50px;
+}
+#necessary-field-notification {
+    font-weight : bold;
+    padding : 10px 0 30px 0;
+}
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}
+
+
+#edit_form img {
+    width:22px;
+    height:27px;
+    float:left;
+    margin:0;
+    border:0;
+    padding:8px 0 0 0;
+}
+#edit_form h4 {
+    margin : 0;
+    padding : 10px 0 0 40px;
+}
+
+
+.submit_button3 {
+    margin-top:30px;
+    margin-left:50px;
+    float:left;
+}
+
+input#student_image_file{
+    height: 25px;
+}
+.label-gender-edit{
+    color:#444444;
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+    width:220px;
+    float:left;
+    
+}
+.edit_student_gender{
+    float:left;
+    padding-top:5px;
+    width:300px;
+    
+}
+.submit_button{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B none repeat scroll 0 0;
+    color:#FFFFFF;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    margin-left:262px;
+    margin-top:30px;
+    padding:7px 10px;
+    border:none;
+    cursor:pointer;
+}
+.submit_button:hover{
+   background:  #373B3F;
+}
+.label-field-pair-edit{
+    float:left;
+    height:80px;
+    width:450px;
+}
+.label-field-pair-edit label{
+    color:#444444;
+    display:block;
+    float:left;
+    font-size:14px;
+    font-weight:600;
+    margin:0 0 10px;
+    padding-top:10px;
+}
+.label-field-pair-edit input{
+    -moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+-moz-border-radius-bottomleft:10px;
+-moz-border-radius-bottomright:10px;
+-moz-border-radius-topleft:10px;
+-moz-border-radius-topright:10px;
+-webkit-border-radius:10px;
+background:#EEEEEE none repeat scroll 0 0;
+border:1px solid #C6C6C6;
+height:17px;
+margin:5px 0 0 10px;
+padding:5px;
+width:205px;
+}
+.sub-heading{
+    background:#9E0F15;
+    height: 1px;
+    border: none;
+    margin-bottom: 15px;
+}
+.span-sub-heading{
+    font-weight: bold;
+    padding-top:10px;
+}
+.label-field-pair-edit input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+.label-underline{
+    background:  #eeeeee;
+    height: 1px;
+    border: none;
+}
+
+input#student_photo{
+    height: 28px;
+}

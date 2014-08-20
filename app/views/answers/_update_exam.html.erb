@@ -1,0 +1,10 @@
+<% form_for @exams do |e| %>
+  	<div class="link-box">
+      <div class="link-heading">
+      	<div class="label-container"><%= t('name') %> : <%= @exams.name %></div><br> <div class="label-container"><%= "Exam Date" %> : <%= @exams.exam_date %></div> <br> <div class="label-container"><%= "Total Time" %> : <%= @exams.time %> </div><br>
+      </div>
+    </div>
+    <div id="skip">
+       <%= link_to "► Start Exam", exam_exam_group_answers_path(@exams), :id => @exams.id  %>
+     </div>
+ <% end %>

@@ -1,0 +1,37 @@
+<table>
+  <tr align="center"> <%= @batch.full_name %> - <%= @exam_group.name %> </tr>
+  <tr>
+    <th>Registration No</th>
+    <th>Student Name</th>
+    <% @modules.each do |m| %>
+      <th><%= m.name %></th>
+    <% end %>
+    <th>College name</th>
+    <th>Degree</th>
+    <th>Date of Birth</th>
+    <th>10th percentage</th>
+    <th>12th percentage</th>
+    <th>Degree overall</th>
+
+
+  </tr>
+  <tr>
+  </tr>
+    <% @slno = 0 %>
+    <% @students.each do |s| %>
+    <tr>
+      <% @slno = @slno + 1 %>
+      <th><%= s.admission_no %></th>
+      <th><%= s.full_name %></th>
+      <% @modules.each do |m| %>
+        <th><%= Answer.sum(:marks, :conditions => ['user_id =? && modules_id=? ',s.user_id,m.id]) || '-' %></th>
+      <% end %>
+      <th><%= s.college_name %></th>
+      <th><%= s.degree%>-<%= s.subject %></th>
+      <th><%= s.date_of_birth %></th>
+      <th><%= s.percent10 %></th>
+      <th><%= s.percent12 %></th>
+      <th><%= s.overall %></th>
+    </tr>
+    <% end %>
+  </table>

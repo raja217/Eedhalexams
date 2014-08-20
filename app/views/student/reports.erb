@@ -1,0 +1,34 @@
+<div id="content-header">
+  <%= image_tag("/images/student_details/student_details_logo.jpg") %>
+  <h1><%= t('students') %></h1>
+  <h3><%= t('report_center') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <div id="exam-results-dashboard">
+
+    <h3><%= t('academics') %></h3>
+
+    <div class="exam-results-reports-col">
+        <h4><%= "Exams" %></h4>
+        <ul>
+          <% @exam_groups.each do |e| %>
+            <li><%= link_to e.name,{:controller => 'exam', :action => 'exam_wise_report',:exam_group=>e.id, :student=>@student.id}%></li>
+          <% end %>
+        </ul>
+
+      <h4><%= t('subject_wise_report') %></h4>
+      <ul>
+        <% @subjects.each do |s| %>
+          <li><%= link_to s.name, { :controller => 'exam', :action => 'generated_report3', :student => @student.id, :subject => s.id } %></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+  </div>
+</div>

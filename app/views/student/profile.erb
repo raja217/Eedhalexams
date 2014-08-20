@@ -1,0 +1,69 @@
+<div id="content-header">
+  <img src="/images/student_details/student_details_logo.jpg" />
+  <h1><%= t('student_info') %></h1>
+  <h3><%= t('student_profile') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <div id="student_profile_heading">
+
+    <div id="profile_picture_display">
+      <% if @student.photo.file? %>
+        <%= image_tag @student.photo.url %>
+      <% else %>
+        <%= image_tag "master_student/profile/default_student.png" %>
+      <% end %>
+    </div>
+
+    <div id ="student_main_info">
+      <h3> <%= @student.full_name %>  </h3>
+      <h4> <%= t('course_text') %>: <%= @student.batch.course.full_name %> </h4>
+      <h4> <%= t('batch') %> : <%= @student.batch.name %> </h4>
+      <h4> <%= "Reg no"%> : <%= @student.admission_no %> </h4>
+    </div>
+
+    <div class="extender"> </div>
+
+  </div>
+
+  <div id="new_profile_info_top">
+    <div class="profile_top_banner">
+      <span class="profile"><%= t('details') %></span>
+      <%= rtl? ? image_tag("master_student/profile/topbanner_rtl.png") : image_tag("master_student/profile/topbanner.png") %></div>
+    <table width="700">
+      <tr class="even left"><td><%= t('date_of_birth') %></td><td class="right"><%= I18n.l(@student.date_of_birth,:format=>:normal) unless @student.date_of_birth.nil? %></td></tr>
+      <tr class="odd left"><td><%= t('address') %></td><td class="right"><%= @student.address_line1%><%= ', ' unless @student.address_line1.blank? %><%=  @student.address_line2 %></td></tr>
+<%#*<tr class="even left"><td></td><td class="right"><%= @student.address_line2%>
+      <tr class="even left"><td><%= t('city') %></td><td class="right"><%= @student.city %></td></tr>
+      <tr class="odd left"><td><%= t('state') %></td><td class="right"><%= @student.state %></td></tr>
+      
+      <tr class="even left"><td><%= "Phone(Land line)" %></td><td class="right"><%= @student.phone2 %></td></tr>
+      <tr class="odd left"><td><%= t('mobile') %></td><td class="right"><%= @student.phone1 %></td></tr>
+      <tr class="even left"><td><%= t('email') %></td><td class="right"><%= @student.email %></td></tr>
+      <tr class="odd left"><td><%= "Alternate Mobile" %></td><td class="right"><%= @student.alt_mobile %></td></tr>
+      <tr class="even left"><td><%= "Alternate Email" %></td><td class="right"><%= @student.alt_email %></td></tr>
+      <% FedenaPlugin::REGISTERED_HOOKS[:student_profile].each do |mod| %>
+        <%= render :partial=>mod.camelize.constantize.send("student_profile_hook"),:locals=>{:student=>@student} %>
+      <% end %>
+      
+      
+    </table>
+      <div class="buttons">
+        <%= link_to " ► #{t('edit_text')}",
+          { :controller => "student", :action => "edit", :id => @student.id },:class => "user_button"%>
+
+        <%= link_to " ► Resume",
+          {:controller => "student", :action => 'profile', :format => "msword", :id => @student.id},:target => '_blank', :class=> 'user_button' %>
+          <%= link_to " ► Take Exam ",
+          {:controller => "answers", :action => 'index'}, :class=> 'user_button' %>
+      </div>
+
+  </div>
+</div>

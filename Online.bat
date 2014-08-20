@@ -1,0 +1,1 @@
+ruby script/server thin -p 80 -e production

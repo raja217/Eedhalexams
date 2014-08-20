@@ -1,0 +1,73 @@
+<div id="content-header">
+  <%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= 'Questions' %></h1>
+  <h3><%= 'Edit' %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+	<% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+    <div id="category-list">
+      <div id="question-form">
+        <% form_for(@question, :url => batch_exam_group_module_question_path(@batch,@exam_group,@module,@question)) do |s| %>
+      <%= error_messages_for :question %>
+      
+      <div class="question_label_field">
+        <p><%= 'Passage' %></p><div class="label-field-pair2"><label><%= 'Is Common' %></label><div class = "text-input-bg"><%= check_box_tag 'is_pass', 'comp', @fin.is_pass == 'comp' ? true : false %></div></div>
+          <div class="question_text_field_bg"><%= s.text_area :passage, :class => "mceEditor" %></div>
+      </div><br>
+      <div class="question_label_field">
+        <label for="student_grade"><%= 'Question' %></label>
+          <div class="question_text_field_bg"><%= s.text_area :ques, :class => "mceEditor" %></div>
+      </div><br>
+      <h4> Enter your options here </h4><br>
+      <div class="option_label_field">
+        <p><%= 'Option-1' %></p><div class="label-field-pair2"><label><%= 'Is Answer' %></label><div class ="text-input-bg"><%= check_box_tag 'is_answer', 'ans1', @fin.is_answer == 'ans1' ? true : false %></div></div>
+          <div class="option_text_field_bg"><%= s.text_area :ans1, :class => "mceEditor" %></div>
+      </div><br>
+      <div class="option_label_field">
+        <p><%= 'Option-2' %></p><div class="label-field-pair2"><label><%= 'Is Answer' %></label><div class ="text-input-bg"><%=check_box_tag 'is_answer', 'ans2', @fin.is_answer == 'ans2' ? true : false %></div></div>
+          <div class="option_text_field_bg"><%= s.text_area :ans2, :class => "mceEditor" %></div>
+      </div><br>
+      <div class="option_label_field">
+        <p><%= 'Option-3' %></p><div class="label-field-pair2"><label><%= 'Is Answer' %></label><div class ="text-input-bg"><%=check_box_tag 'is_answer', 'ans3', @fin.is_answer == 'ans3' ? true : false %></div></div>
+          <div class="option_text_field_bg"><%= s.text_area :ans3, :class => "mceEditor" %></div>
+      </div><br>
+      <div class="option_label_field">
+        <p><%= 'Option-4' %></p><div class="label-field-pair2"><label><%= 'Is Answer' %></label><div class ="text-input-bg"><%=check_box_tag 'is_answer', 'ans4', @fin.is_answer == 'ans4' ? true : false %></div></div>
+          <div class="option_text_field_bg"><%= s.text_area :ans4, :class => "mceEditor" %></div>
+      </div><br><br>
+      <div class="extender">
+
+      </div>
+      <div id = "submit-button">
+        <%= submit_tag "", :value => "► #{'Update'}", :class => "submit-button" %> 
+      </div>
+      <div id="skip">
+        <%= link_to "► #{'Finish'}", batch_exam_group_module_questions_path(@batch,@exam_group,@module) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+tinyMCE.init({
+    mode : "textareas",
+    theme : "advanced",
+    plugins : "emotions,spellchecker,advhr,insertdatetime,preview", 
+
+    // Theme options - button# indicated the row# only
+    theme_advanced_buttons1 : "newdocument,cut,copy,paste,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+    theme_advanced_buttons2 : ",bullist,numlist,|,outdent,indent,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor,insertdate,inserttime,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",
+    theme_advanced_buttons3 : "",      
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_statusbar_location : "bottom",
+    theme_advanced_resizing : true
+});
+</script> 
+    </div>
+</div>

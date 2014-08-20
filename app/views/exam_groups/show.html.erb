@@ -1,0 +1,36 @@
+<div id="content-header">
+  <%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= t('Questions') %></h1>
+  <h3><%= t('select_module') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <% unless flash[:warn_notice].nil? %>
+    <div id="errorExplanation" class="errorExplanation"><p><%= flash[:warn_notice] %></p> </div>
+  <% end %>
+
+  <div class="box">
+    <div class="bread_crumb">
+      <%= link_to "#{t('courses_text')}", courses_path %> &raquo;
+      <%= link_to @exam_group.batch.course.full_name, @exam_group.batch.course %> &raquo;
+      <%= link_to  "#{t('batch')} " + @exam_group.batch.name, [@exam_group.batch.course, @exam_group.batch] %> &raquo;
+      <%= link_to "#{t('exams_text')}", batch_exam_groups_path(@batch) %> &raquo;
+      <%= link_to @exam_group.name, [@exam_group.batch, @exam_group] %> &raquo;
+      <%= 'Questions' %>
+    </div>
+    <div class = "modules">
+      <% @modules.each do |mod| %>
+        <div class="link-box">
+          <div class="link-heading"><%= link_to mod.name, batch_exam_group_module_questions_path(@batch,@exam_group,mod) %> : <%= mod.total %>  <%= 'Questions' %> </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="extender"></div>
+  </div>
+</div>

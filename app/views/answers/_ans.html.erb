@@ -1,0 +1,77 @@
+<div id = "main1">
+  <% form_for @answer do |f|%>
+    <% if @ans.is_pass == 'comp'%>
+      <div id = "passage">
+        <%= "Passage"%>:<br>
+        <%= @ans.passage %>
+      </div> <br>
+      <div class = "questions">
+        <label>
+          <%= @slno %> . <%= @ans.ques %>
+        </label> 
+      </div> 
+      <div id = "options">
+        <label for "options">
+          <div id = "option-1">
+            <%= radio_button_tag 'answer', 'ans1'%> a) <%= @ans.ans1 %>
+          </div><br>
+          <div id = "option-2">
+            <%= radio_button_tag 'answer', 'ans2'%> b) <%= @ans.ans2 %>
+          </div><br>
+          <div id = "option-3">
+            <%= radio_button_tag 'answer', 'ans3'%> c) <%= @ans.ans3 %>
+          </div><br>
+          <div id = "option-4">
+            <%= radio_button_tag 'answer', 'ans4'%> d) <%= @ans.ans4  %>
+          </div><br>
+        </label>
+      </div><br><br><br>
+    <% else %>
+      <div class = "questions1">
+        <label>
+          <%= @slno %> . <%= @ans.ques %>
+        </label> 
+      </div> 
+      <div id = "options1">
+        <label for "options">
+          <div id = "option-1">
+            <%= radio_button_tag 'answer', 'ans1'%> a) <%= @ans.ans1 %>
+          </div><br>
+          <div id = "option-2">
+            <%= radio_button_tag 'answer', 'ans2' %> b) <%= @ans.ans2 %>
+          </div><br>
+          <div id = "option-3">
+            <%= radio_button_tag 'answer', 'ans3'%> c) <%= @ans.ans3 %>
+          </div><br>
+          <div id = "option-4">
+            <%= radio_button_tag 'answer', 'ans4' %> d) <%= @ans.ans4  %>
+          </div><br>
+        </label>
+      </div><br><br><br>
+    <% end %>
+   <% end %> 
+</div>
+  <div id = "prev">
+    <%= link_to_remote "Save and Next", 
+        :before => "Element.show('loader')",
+        :after => "onSeat(#{@ans.id})",
+        :success => "Element.hide('loader')",
+        :url=>{:controller=>"answers", :action=>"next"},
+        :with => "'answer='+$$('[type=radio]:checked')[0].value+'&passed_question=#{@ans.id}&'+'&exam_group_id=#{@exam_group.id}&'+'&s= #{@slno+1}'"
+
+      %> 
+    </div>
+    <div id = "next">
+       <%= link_to_remote "Skip", 
+        :before => "Element.show('loader')",
+        :after => "onSeatSelected(#{@ans.id})",
+        :success => "Element.hide('loader')",
+        :url=>{:controller=>"answers", :action=>"next", :id => @ans.id},
+        :with => "'s= #{@slno+1}'+'&passed_question=#{@ans.id}&'+'&exam_group_id=#{@exam_group.id}&'"
+        
+      %> 
+    </div>   
+    <div id = "sub">
+      <%= link_to "Submit", final_exam_group_answers_path(@exam_group), :confirm => "Sure you want to quit this exam?"%> 
+    </div>
+  <%= image_tag("loader.gif",:align => "absmiddle",:border => 0,:id => "loader", :style =>"display: none;" ) %>

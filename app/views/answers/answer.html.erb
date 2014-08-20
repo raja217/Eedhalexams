@@ -1,0 +1,122 @@
+<div id = "page_yeild">
+  <div id="student_profile_heading">
+    <div id="profile_picture_display">
+      <% if @student.photo.file? %>
+        <%= image_tag @student.photo.url %>
+      <% else %>
+        <%= image_tag "master_student/profile/default_student.png" %>
+      <% end %>
+    </div>
+    <div id ="student_main_info">
+      <%= @student.full_name %><br>
+      <%= 'Course - Batch' %> : <%= @student.batch.full_name %> <br>
+      <%= t('adm_no') %> : <%= @student.admission_no %> <br>
+    </div>
+    <div class = "exam-details">
+      
+      <%= @exam_group.name%>
+    </div>
+    <div class="extender"> </div>
+  </div>
+  <div id = "modules">
+    <%= render :partial => 'ans1' %>
+  </div>
+  
+  <div class="extender"></div>
+  <%= image_tag("loader.gif",:align => "absmiddle",:border => 0,:id => "loader", :style =>"display: none;" ) %>
+
+</div>
+<script>
+  function onSeatSelected(ctrlId)
+  {
+    ctrlSelectedSeat = document.getElementById(ctrlId);
+    if (ctrlSelectedSeat.className == "not_answered")
+    {
+      ctrlSelectedSeat.className = "visited";
+    }
+  }
+  function onSeat(ctrlId)
+  {
+    ctrlSelectedSeat = document.getElementById(ctrlId);
+    if (ctrlSelectedSeat.className == "not_answered" || ctrlSelectedSeat.className == "visited")
+    {
+      ctrlSelectedSeat.className = "answered";
+    }
+  }
+  function draw_report(){
+    var s = document.getElementById(this.id)
+    Element.show('loader')
+    new Ajax.Request('/answers/ren',
+    {asynchronous:true, evalScripts:true,
+    parameters:'passed_question='+this.id+'&s='+ s.name +'&exam_group=<%= @exam_group.id %>',onSuccess:function(request){Element.hide('loader')}
+    })
+  }
+
+  document.observe("dom:loaded", function() {
+    $$('.not_answered').invoke('observe','click',draw_report);
+    $$('.visited').invoke('observe','click',draw_report);
+
+  });
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!-- Copyright 2006, Sandeep Gangadharan -->
+  <!-- For more free scripts go to http://www.sivamdesign.com/scripts/ -->
+
+  <!--
+  var sec = 00;   // set the seconds
+  var min = <%= @exam_group.time %>;   // set the minutes
+  var hour = 00// set the hours
+
+      function countDown() {
+        sec--;
+        if (sec == -01) {
+          sec = 59;
+          min = min - 1; 
+          if (min == -01) {
+            min = 59;
+            hour = hour - 1; }
+          else {
+            hour = hour }
+          }
+        else {
+          min = min; 
+        }
+
+        if (sec<=9) { sec = "0" + sec; }
+
+          time = (hour<=9 ? "0" + hour : hour)+ ":" +(min<=9 ? "0" + min : min) + ":" + sec + "";
+
+          if (document.getElementById) { document.getElementById('theTime').innerHTML = time; }
+
+          SD=window.setTimeout("countDown()",1000);
+        if (hour == "00" && min == '00' && sec == '00') { sec = "00"; window.clearTimeout(SD); window.alert("Your answers are saved sucessfully"); window.location.href = "final"; }
+      }
+      window.onload = countDown;
+      // -->
+    </script>
+<script type="text/javascript">
+/*function clickIE() {
+  if (document.all) {
+    return false;
+  }
+}
+
+function clickNS(e) {
+  if(document.layers||(document.getElementById&&!document.all)) {
+    if (e.which==2||e.which==3) {
+      return false;
+    }
+  }
+}
+
+if (document.layers){
+  document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;
+}
+else{
+  document.onmouseup=clickNS;document.oncontextmenu=clickIE;
+}
+
+document.oncontextmenu=new Function("return false");
+</script>
+
+  

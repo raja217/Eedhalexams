@@ -1,0 +1,51 @@
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="exam-details">
+    <%= @exam_group.name %>
+  </div>
+  <div id = "instructions">
+    <div id = "general">
+      <%= "
+        Time alloted : #{@exam_group.time} hours." %><br/>
+
+      <%= "  Each question carry 1 mark, no negative marks."%><br/>
+    </div>
+    <table id="listing" width="100%">
+      <tr>
+        <td><%= t('sl_no') %></td>
+        <td><%= t('name') %></td>
+        <td><%= t('questions') %></td>
+        <td><%= t('Marks') %></td>
+      </tr>
+      <% @slno = 0 %>
+      <% @modules.each do |m| %>
+        <% @slno= @slno + 1 %>
+        <tr >
+          <td ><%=  @slno %></td>
+          <td ><%= m.name %></td>
+          <td ><%= m.total %> </td>
+          <td ><%= m.marks %> </td>
+        </tr>
+      <% end %>
+    </table>
+    <div class = "directions">
+      <%= " * Click the 'Submit' button given in the bottom of this page to Submit your answers."%><br/>
+        <%=  " * Click the 'Moduleexit' button to exit that particular module " %><br/>
+        <%= " * Test will be submitted automatically if the time expired." %><br/>
+        <%= " * Don't refresh the page."%><br/>
+    </div><br>
+  </div>
+  <%= link_to "Start" , answer_exam_group_answers_path(@exam_group), :class => "submit_button", :onclick => 'return openPopup(this);' %>
+  <div class="extender"></div>
+</div>
+<script type="text/javascript">
+function openPopup(link)
+{
+    link.hide();
+    window.open(link.href,'exam_dialog','toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=no');
+    return false;
+}
+</script>

@@ -1,0 +1,385 @@
+<div id="content-header">
+<%= image_tag("/images/admission/admission_page_logo.jpg") %>
+  <h1><%= t('edit_details') %></h1>
+  <h3><%= t('student_details') %></h3>
+  <div id="app-back-button">
+      <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for :student, :url => {:action => 'edit'}, :html => {:multipart => true} do |s| %>
+    <%= error_messages_for 'student' %>
+    <div id="admission1-form">
+      <div id="necessary-field-notification"><%= t('legend1') %><span class="necessary-field">*</span> <%= t('legend2') %></div>
+
+      <div id="autofill_area">
+
+        <div class="label-field-pair-edit">
+          <label for="master_student_admission_no"><%= "Registration number" %><span class="necessary-field">*</span></label>
+          <div class="text-input-bg"><%= s.text_field :admission_no %></div>
+        </div>
+
+
+        <div class="extender"></div>
+      </div>
+
+      <span class="span-sub-heading"><%= t('personal_details') %></span>
+
+      <hr class="sub-heading"></hr>
+      <div class="student_admission_date">
+        <div class="label-field-pair">
+          <label for="master_student_first_name"><%= t('first_name') %><span class="necessary-field">*</span></label>
+          <div class="text-input-bg"><%= s.text_field :first_name %></div>
+        </div>
+      </div>
+
+      <div class="student_admission_date">
+        <div class="label-field-pair">
+          <label for="master_student_first_name"><%= t('middle_name') %></label>
+          <div class="text-input-bg"><%= s.text_field :middle_name %></div>
+        </div>
+      </div>
+
+      <div class="student_admission_date">
+        <div class="label-field-pair">
+          <label for="master_student_first_name"><%= t('last_name') %></label>
+          <div class="text-input-bg"><%= s.text_field :last_name %></div>
+        </div>
+      </div>
+
+
+      <div id="admission1_form_vertical_block_left">
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_grade"><%= t('course_and_batch') %><span class="necessary-field">*</span></label>
+            <div class="text-input-bg"><%= s.select :batch_id, @batches.map {|b| [b.full_name, b.id]} %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+          <label for="master_student_date_of_birth"><%= t('date_of_birth') %><span class="necessary-field">*</span></label>
+          <div class="text-input-bg">
+            <%= calendar_date_select_tag 'student[date_of_birth]', I18n.l(Date.today,:format=>:default),
+              :year_range => 30.years.ago..5.years.from_now, :readonly=>true, :popup=>"force" %>
+          </div>
+        </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label_field_pair">
+            <p class="label_for_student_gender" for="student_gender"><%= t('gender') %></p>
+            <div class="student_gender_value">
+              <p class="label_for_gender" for="student_gender_true"> <%= t('male') %></p>
+              <%= s.radio_button  "gender", "m", :checked => "checked" %>
+              <p class="label_for_gender" for="student_gender_false"><%= t('female') %></p>
+              <%= s.radio_button  "gender", "f" %>
+            </div>
+            <div class="extender"></div>
+          </div>
+        </div>
+        
+
+      
+      <br/>
+
+      <span class="span-sub-heading"><%= t('contact_details') %></span>
+      <hr class="sub-heading"></hr>
+
+      <div id="necessary-field-notification"><%= "Current address" %></div>
+
+      <div id="admission1_form_vertical_block_right">
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('address_line1') %></label>
+            <div class="text-input-bg"><%= s.text_field :address_line1, :value => @student.address_line1 %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('address_line2') %></label>
+            <div class="text-input-bg"><%= s.text_field :address_line2, :value => @student.address_line2 %></div>
+          </div>
+        </div>
+
+         <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('city') %></label>
+            <div class="text-input-bg"><%= s.text_field :city, :value => @student.city %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_state"><%= t('state') %></label>
+            <div class="text-input-bg"><%= s.text_field :state, :value =>@student.state %></div>
+          </div>
+        </div>
+
+        <div id="necessary-field-notification"> <%= "Permanent address" %></div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('address_line1') %></label>
+            <div class="text-input-bg"><%= s.text_field :curaddlin1, :value => @student.curaddlin1 %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('address_line2') %></label>
+            <div class="text-input-bg"><%= s.text_field :curraddlin2, :value => @student.curraddlin2 %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_city"><%= t('city') %></label>
+            <div class="text-input-bg"><%= s.text_field :curcity, :value => @student.curcity %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_state"><%= t('state') %></label>
+            <div class="text-input-bg"><%= s.text_field :curst, :value =>@student.curst %></div>
+          </div>
+        </div>
+
+        <div id="necessary-field-notification"> <%= "Others" %></div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="student_nationality"><%= t("nationality") %></label>
+            <div class="text-input-bg">
+              <%= select :student, :nationality_id, Country.all.map {|c| [c.name, c.id]}, :selected=> @student.nationality_id || @selected_value.to_i %>
+            </div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_phone1"><%= "Phone(Land line)" %></label>
+            <div class="text-input-bg"><%= s.text_field :phone2, :value =>@student.phone2 %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_phone1"><%= "Mobile" %></label>
+            <div class="text-input-bg"><%= s.text_field :phone1, :value =>@student.phone1 %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_phone2"><%= "Alternate Mobile" %></label>
+            <div class="text-input-bg"><%= s.text_field :alt_mobile, :value =>@student.alt_mobile %></div>
+          </div>
+        </div>
+
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= t('email') %></label>
+            <div class="text-input-bg"><%= s.text_field :email, :value => @student.email %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Alternate Email" %></label>
+            <div class="text-input-bg"><%= s.text_field :alt_email, :value => @student.alt_email %></div>
+          </div>
+        </div>
+
+        <% if @application_sms_enabled.is_enabled == true %>
+        <hr class="label-underline"></hr>
+        <div class="label-field-pair">
+          <label for="student_sms"><%= t('enable_sms_feature') %></label>
+          <div class="text-input-bg"><%= s.check_box :is_sms_enabled %></div>
+        </div>
+        <% end %>
+        <br/>
+
+        <span class="span-sub-heading"><%= "Education" %></span>
+        <hr class="sub-heading"></hr>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "College" %></label>
+            <div class="text-input-bg"><%= s.text_field :college_name, :value => @student.college_name %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "University" %></label>
+            <div class="text-input-bg"><%= s.text_field :university, :value => @student.university %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "University State" %></label>
+            <div class="text-input-bg"><%= s.text_field :univ_state, :value => @student.univ_state %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Aggregate Percentage in 10th" %></label>
+            <div class="text-input-bg"><%= s.text_field :percent10, :value => @student.percent10 %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "10th Year of passing" %></label>
+            <div class="text-input-bg"><%= s.text_field :year, :value => @student.year %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Aggregate Percentage in 12th" %></label>
+            <div class="text-input-bg"><%= s.text_field :percent12, :value => @student.percent12 %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "12th Year of passing" %></label>
+            <div class="text-input-bg"><%= s.text_field :year12, :value => @student.year12 %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Diplomo College" %></label>
+            <div class="text-input-bg"><%= s.text_field :dip, :value => @student.dip %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Aggregate Percentage in diplomo" %></label>
+            <div class="text-input-bg"><%= s.text_field :percentdip, :value => @student.percentdip %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Diplomo year of passing" %></label>
+            <div class="text-input-bg"><%= s.text_field :yeardip, :value => @student.yeardip %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Graduation college" %></label>
+            <div class="text-input-bg"><%= s.text_field :grad_coll, :value => @student.grad_coll %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Graduation degree" %></label>
+            <div class="text-input-bg"><%= s.text_field :degree, :value => @student.degree %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Graduation Specialization" %></label>
+            <div class="text-input-bg"><%= s.text_field :subject, :value => @student.subject %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Aggregate Percentage in Graduation" %></label>
+            <div class="text-input-bg"><%= s.text_field :overall, :value => @student.overall %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Graduation year of passing" %></label>
+            <div class="text-input-bg"><%= s.text_field :yeard, :value => @student.yeard %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Post Graduation college" %></label>
+            <div class="text-input-bg"><%= s.text_field :pg_coll, :value => @student.pg_coll %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Post Graduation degree" %></label>
+            <div class="text-input-bg"><%= s.text_field :pgd, :value => @student.pgd %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Post Graduation Specialization" %></label>
+            <div class="text-input-bg"><%= s.text_field :pgsub, :value => @student.pgsub %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Aggregate Percentage in Post Graduation" %></label>
+            <div class="text-input-bg"><%= s.text_field :percentpg, :value => @student.percentpg %></div>
+          </div>
+        </div>
+        <div class="student_admission_date">
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Post Graduation year of passing" %></label>
+            <div class="text-input-bg"><%= s.text_field :yearpg, :value => @student.yearpg %></div>
+          </div>
+        </div>
+        <br/>
+        <span class="span-sub-heading"><%= "Project_details" %></span>
+        <hr class="sub-heading"></hr>
+
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Project name" %></label>
+            <div class="text-input-bg"><%= s.text_field :project_name, :value => @student.project_name %></div>
+          </div>
+
+
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Duration" %></label>
+            <div class="text-input-bg"><%= s.text_field :duration, :value => @student.duration %></div>
+          </div><br/>
+        
+        <div class="question_label_field">
+          <p><%= 'Project' %></p>
+          <div class="question_text_field_bg"><%= s.text_area :project, :class => "mceEditor", :value => @student.project %></div>
+        </div><br>
+        
+          <div class="label-field-pair">
+            <label for="master_student_email"><%= "Technical" %></label>
+            <div class="text-input-bg"><%= s.text_field :technical, :value => @student.technical %></div>
+          </div>
+
+        <br/>
+
+        <span class="span-sub-heading"><%= t('upload_photo') %></span>
+        <hr class="sub-heading"></hr>
+
+        <div class="label-field-pair">
+          <label for="master_student_image_file"><%= t('upload_photo') %> (<%= t('max_size') %>)</label>
+          <div class="text-input-bg"><%= s.file_field :photo, :size=>12 %></div>
+        </div>
+      </div>
+       <div class="extender"></div>
+    </div>
+
+    <%= submit_tag "", :class => "submit_button", :value => "Save And Proceed" %>
+  <% end %>
+
+</div>
+<script type="text/javascript">
+tinyMCE.init({
+    mode : "textareas",
+    theme : "advanced",
+    plugins : "emotions,spellchecker,advhr,insertdatetime,preview", 
+
+    // Theme options - button# indicated the row# only
+    theme_advanced_buttons1 : "newdocument,cut,copy,paste,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+    theme_advanced_buttons2 : ",bullist,numlist,|,outdent,indent,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor,insertdate,inserttime,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",
+    theme_advanced_buttons3 : "",      
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_statusbar_location : "bottom",
+    theme_advanced_resizing : true
+});
+</script>

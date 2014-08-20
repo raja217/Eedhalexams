@@ -1,0 +1,35 @@
+<div id="content-header">
+  <%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= 'Questions' %></h1>
+  <h3><%= 'Home' %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to "#{t('new_text')}", new_batch_exam_group_module_question_path(@batch,@exam_group,@module) %> </li>
+
+  </ul>
+</div>
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <% @slno = 0 %>
+  <div class = "a">
+    <%= @module.name %>
+  </div><br>
+  <%- @questions.each do |q| -%>
+  <% @slno = @slno+1  %>
+    <div class="question"><%= @slno %> ) <%= q.passage %></div><br>
+    <%= q.ques %>
+    <div class = "edit"><%= link_to "Edit",edit_batch_exam_group_module_question_path(@batch,@exam_group,@module,@questions[@slno - 1]) %> | <%= link_to "Delete", :controller => 'questions', :action => 'destroy' %></div><br>
+    <span><div class="option-1"><%= q.ans1 %></div><br>
+    <div class="option-2"><%= q.ans2 %></div><br>
+    <div class="option-3"><%= q.ans3 %></div><br>
+    <div class="option-4"><%= q.ans4 %></div></span><br>
+  <% end %>
+</div>

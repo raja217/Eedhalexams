@@ -1,0 +1,42 @@
+<div id = "modules">
+  <h1><%= @module.name%></h1>
+    <%= "Time remaining"%> :
+      <span id="theTime" class="timeClass"></span>
+</div><br>
+<div id = "main">
+  <% unless @ans.nil? %>
+      <%= render :partial => 'ans' %>
+  <% else %>
+    <%= @module.name%>: There are <%= @module.total %> <%= "questions"%> <br>
+    <%= "Each carries 1 mark"%> <%= "and u have '#{@module.marks}' minutes"%>
+    <div id = "sub1">
+      <%= link_to_remote "Start", 
+        :before => "Element.show('loader')",
+        :success => "Element.hide('loader')",
+        :url=>{:controller=>"answers", :action=>"start"},
+        :with => "'&student_additional_field=#{@module.id}&'+'&exam_group_id=#{@exam_group.id}&'"
+      %> 
+    </div>
+  <% end %>
+</div>
+  <div id="mod">
+    <%= link_to_remote "Module Exit", 
+        :before => "Element.show('loader')",
+        :success => "Element.hide('loader')",
+        :url=>{:controller=>"answers", :action=>"next_mod"},
+        :confirm => "Sure you want to exit this module?",
+        :with => "'&module_id=#{@module.id}&'+'&exam_group_id=#{@exam_group.id}&'"
+      %>
+    </div>
+
+<div id = "quespan">
+ 
+    <%= render :partial => 'ques'%>
+
+  
+</div>
+
+
+
+
+

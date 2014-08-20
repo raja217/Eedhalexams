@@ -1,0 +1,57 @@
+<div id="content-header">
+<%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= t('exams_text') %></h1>
+  <h3><%= t('new_exam') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div class="box">
+   
+    <% form_for @exam_group, :url => {:controller => :exam_groups, :action => :index } do |f| %>
+      <%= error_messages_for :exam %>
+      <div class="label-field-pair">
+        <label for="subject_maximum_marks"><%= t('name') %><span class="necessary-field">*</span></label>
+        <div class="text-input-bg"><%= f.text_field :name %></div>
+      </div>
+      <div class="label-field-pair">
+        <label for="subject_start_time"><%= 'Exam date' %><span class="necessary-field">*</span>
+        </label>
+        <div class="text-input-bg"> <%= f.calendar_date_select :exam_date %></div>
+      </div>
+       <div class="label-field-pair">
+        <label for="subject_start_time"><%= 'Total time(hours)' %><span class="necessary-field">*</span>
+        </label>
+        <div class="text-input-bg"> <%= f.text_field :time %></div>
+      </div>
+      <div id="right-side-inputs">
+        <div class="label-field-pair category_list">
+          <div class="label-container">
+            <label><%= t('select_a_category') %>:
+              <b class="sel-list">
+                <%= link_to_function t('all'), "$$('input.category_select').each(function(checkbox) { checkbox.checked = true; });" %>,
+                <%= link_to_function t('none'), "$$('input.category_select').each(function(checkbox) { checkbox.checked = false; });" %>
+              </b>
+            </label>
+          </div>
+          <div class="categories">
+            <% @modules.each do |c| %>
+              <div class="each_category">
+                <%= check_box_tag "modules[]", c.id, false, :class=>"category_select" %> <label><%= "#{c.name}" %></label>
+              </div>
+            <% end %></div>
+        </div>
+      </div>  
+        <%= submit_tag "", :value => "► #{t('save')}", :class => "submit_button" %>
+      </div>
+    <% end %>
+    <div class="extender"></div>
+  </div>
+</div>

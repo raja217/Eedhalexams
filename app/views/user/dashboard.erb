@@ -1,0 +1,66 @@
+<% cache News.cache_fragment_name do%>
+  <%= render :partial=>'news_bar' %>
+<% end %>
+
+<% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+<div id="user_options">
+
+  <% if @user.admin? %>
+  <div class="button-box">
+      <%= link_to "<div class ='button-label'></div>", {:controller => "exam", :action => "index"},
+        :class => "option_buttons", :id => "examinations_button",:title => "          #{t('manage_examinations')}" %>
+    </div>
+    <div class="button-box">
+      <%= link_to "<div class ='button-label'><p>#{t('manage_course_batch')}</p></div>", {:controller => "courses", :action => "index"},
+        :class => "option_buttons", :id => "settings_button", :title => t('setting_link_title') %>
+    </div>
+    
+    
+    <div class="button-box">
+      <%= link_to "<div class ='button-label'><p>Add Students</p></div>", {:controller => "student", :action => "index"},
+        :class => "option_buttons", :id => "admission_button", :title => "Add Students"%>
+    </div>
+  <% elsif @user.student? %>
+
+    <div class="button-box">
+      <%= link_to "<div class ='button-label'></div>", {:controller => "student", :action => "profile", :id => @student.id},
+        :class => "option_buttons", :id => "student_details_button", :title => "        #{t('view_your_profile')}"  %>
+
+    </div>
+     <div class="button-box">
+      <%= link_to "<div class ='button-label'></div>", {:controller => "answers", :action => "index"},
+        :class => "option_buttons", :id => "examinations_button",:title => "          #{t('manage_examinations')}" %>
+    </div>
+  
+    
+  <% elsif @user.guest? %>
+  
+   <div class="button-box">
+        <%= link_to "<div class ='button-label'><p>#{t('Register')}</p></div>", {:controller => "student", :action => "admission1"},
+          :class => "option_buttons", :id => "admission_button", :title => "#{t('admission_link_title')}" %>
+      </div>
+  <% end %>
+      
+
+  <% FedenaPlugin::AVAILABLE_MODULES.each do |mod| %>
+    <% unless mod[:dashboard_menu].blank? %>
+      <% if permitted_to? "#{mod[:dashboard_menu][:action]}".to_sym,"#{mod[:dashboard_menu][:controller]}".to_sym %>
+        <div class="button-box">
+          <%= link_to "<div class =\"button-label\"><p>#{t("#{mod[:dashboard_menu][:title]}")}</p></div>", {:controller => "#{mod[:dashboard_menu][:controller]}", :action => "#{mod[:dashboard_menu][:action]}"}, :class=>"#{mod[:dashboard_menu][:options][:class]}", :id=>"#{mod[:dashboard_menu][:options][:id]}", :title=>"#{t("#{mod[:dashboard_menu][:options][:title]}")}" %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>
+
+<div id="option_description"> </div>
+
+<script type="text/javascript">
+  $$('#user_options .button-box').each(function(ele, index){
+    if(index%5 == 0){
+      ele.addClassName("left-button");
+    }
+  });
+</script>

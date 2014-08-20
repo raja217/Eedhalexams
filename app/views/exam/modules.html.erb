@@ -1,0 +1,45 @@
+<div id="content-header">
+  <%= image_tag("/images/show_settings.png") %>
+  <h1><%= 'Modules' %></h1>
+  <h3><%= t('create_text') %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <%- form_for :additional_field do |c| -%>
+
+    
+    <div id="form-content">
+      <div class="label-field-pair">
+        <label for="category_name"><%= t('name') %></label>
+        <div class="text-input-bg"> <%= c.text_field :name %> </div>
+      </div>
+      <div class="label-field-pair">
+        <label for="category_name"><%= 'NO of Questions' %></label>
+        <div class="text-input-bg"> <%= c.text_field :total %> </div>
+      </div>
+      <div class="label-field-pair">
+        <label for="category_name"><%= 'Marks' %></label>
+        <div class="text-input-bg"> <%= c.text_field :marks %> </div>
+      </div>
+
+      <div id="submit-button">
+        <%=submit_tag("► #{t('create_text')}") %>
+      </div>
+    </div>
+
+
+  <%- end -%>
+
+  <div id="category-list">
+    <%= render :partial => "additional_fields" %>
+  </div>
+
+</div>

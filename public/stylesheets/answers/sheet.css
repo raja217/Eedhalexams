@@ -1,0 +1,41 @@
+#green {
+	color:#00FF00;
+	font-weight: bolder;
+}
+#red {
+	color:#FF0000;
+	font-weight: bolder;
+}
+#black {
+
+}
+#a {
+ font-weight: bolder;
+ text-decoration: underline;
+}
+.page {
+	width:auto;
+    margin:30px auto;
+}
+.question {
+	font-weight: bold;
+}
+#skip a{
+
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    background:#27292B;
+    color:#FFFFFF;
+    font-family:courier;
+    font-size:24px;
+    font-weight:bold;
+    margin:30px auto;
+    margin-left: 250px;
+    padding:7px 12px;
+    border:none;
+    text-align:center;
+    text-decoration: none;
+    height:40px;
+    width:150px;
+    cursor:pointer;
+}

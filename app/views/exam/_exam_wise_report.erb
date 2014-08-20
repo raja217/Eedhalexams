@@ -1,0 +1,37 @@
+<% total_marks_attained = 0 %>
+<% total_max_marks = 0 %>
+  <div id="score-table">
+    <div class="custom_header">
+      <span class="student"><%= "#{@student.full_name} - #{@student.admission_no}" %></span>
+    </div> 
+    <table id="listing" align="center" width="100%" cellpadding="1" cellspacing="1">
+      <tr class="tr-head">
+        <td><%= t('subject') %></td>
+        <td><%= t('marks_obtained') %></td>
+        <td><%= t('max') %></td>
+      </tr>
+      <% @modules.each do |m| %>
+        <tr class="tr-<%= cycle('odd', 'even') %>">
+          <td class="col-1"> <%= m.name %></td>
+            <td class="col-1"><%= Answer.sum(:marks, :conditions => ['user_id = ? && modules_id = ?',@student.user_id,m.id]) || '-' %></td>
+            <% total_marks_attained = total_marks_attained+Answer.sum(:marks, :conditions => ['user_id = ? && modules_id=?',@student.user_id,m.id]) %>
+            <td class="col-1"><%= m.marks %></td>
+            <% total_max_marks =  total_max_marks+m.marks %>
+          </td>
+        </tr>
+      <% end %>
+
+        <tr class="tr-head">
+          <td><%= t('total_marks') %>:</td>
+          <td><%= total_marks_attained %></td><td><%= total_max_marks %></td>
+        </tr>
+      
+    </table>
+  </div>
+<% unless @batch.gpa_enabled? %>
+  
+    <script type="text/javascript" src="/javascripts/swfobject.js"></script>
+    <%#= @graph %>
+
+<% end %>
+<div class="extender"></div>

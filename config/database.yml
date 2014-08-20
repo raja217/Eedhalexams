@@ -1,0 +1,25 @@
+development:
+      host: localhost
+      adapter: mysql
+      database: online
+      port: 3306
+      username: root
+      password: eedhal
+
+test: &test
+      host: localhost
+      adapter: mysql
+      database: online
+      port: 3306
+      username: root
+      password: eedhal
+
+production:
+      host: localhost
+      adapter: mysql
+      database: online
+      port: 3306
+      username: root
+      password: eedhal
+cucumber:
+  <<: *test

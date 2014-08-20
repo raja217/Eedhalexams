@@ -1,0 +1,25 @@
+<div id="page-yield">
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  <div class="box">
+  	<%= "Congratulations! #{@user.first_name} successfully completed the exam"%><br><br>
+  	<%= link_to "Click here to view the Result", result_exam_group_answers_path(@exam_group), :class => 'submit_button'%><br/><br/>
+  </div>
+  <% unless @exams.nil?%>
+  	<div class="link-box">
+      <div class="link-heading">
+      	<div class="label-container"><%= t('name') %> : <%= @exams.name %></div><br> <div class="label-container"><%= "Exam Date" %> : <%= @exams.exam_date %></div> <br> <div class="label-container"><%= "Total Time" %> : <%= @exams.time %> </div><br>
+      </div>
+    </div>
+    <div id="skip">
+       <%= link_to "► Start Exam", exam_exam_group_answers_path(@exams), :id => @exams.id  %>
+     </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+function closePopup(link)
+{
+  window.close();
+}
+</script>

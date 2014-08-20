@@ -1,0 +1,19 @@
+<div id="content-header">
+  <%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= 'Questions' %></h1>
+  <h3><%= 'Add' %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+	<% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+    <div id="category-list">
+      <div id = "category">
+        Only '<%= @mod %>' allowed</div>
+          <%= render :partial=>"ques" %>
+    </div>
+</div>

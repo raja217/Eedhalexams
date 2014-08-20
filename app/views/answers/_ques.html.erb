@@ -1,0 +1,43 @@
+<div class="list_name">
+  <label><%= "Questions" %></label>
+  <%= image_tag("loader.gif",:align => "absmiddle",:border => 0,:id => "loader", :style =>"display: none;" ) %>
+</div>
+<% @slno = 0 %>
+<ul class="student_list">
+  <% @questions.each do |s| %>
+    <% @slno = @slno + 1 %>
+    <% a = @questions[@slno - 1]%>
+    <% @fin = Answer.find_by_questions_id(s, :conditions => ['user_id=?',@user]) %>
+  <% if (@fin == nil) %>
+    <li class="student_names">
+      <a href="#" id="<%= @questions[@slno - 1]%>"  class="not_answered" onclick = "onSeatSelected(<%= @questions[@slno -1] %>)" name = "<%= @slno %>"> <%= @slno %></a>
+    </li>
+  <% else %>
+    <% if (@fin.visited == 1) %>
+      <li class="student_names">
+        <a href="#" id="<%= @questions[@slno - 1]%>"  class="answered" onclick = "onSeatSelected(<%= @questions[@slno -1] %>)" name = "<%= @slno %>"> <%= @slno %></a>
+      </li>
+    <% else %>
+      <li class="student_names">
+        <a href="#" id="<%= @questions[@slno - 1]%>"  class="visited" onclick = "onSeatSelected(<%= @questions[@slno -1] %>)" name = "<%= @slno %>"> <%= @slno %></a>
+      </li>
+    <% end %>
+  <% end %>
+  <% end %>
+</ul>
+
+
+<script>
+function onSeatSelected(ctrlId)
+  {
+    ctrlSelectedSeat = document.getElementById(ctrlId);
+    if (ctrlSelectedSeat.className == "not_answered")
+    {
+      ctrlSelectedSeat.className = "visited";
+    }
+  }
+  $$('.not_answered').invoke('observe','click',draw_report);
+  $$('.visited').invoke('observe','click',draw_report);
+  $$('.answered').invoke('observe','click',draw_report);
+
+</script>

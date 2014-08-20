@@ -1,0 +1,160 @@
+<div class = "page">
+	<% @modules.each do |m|%>
+	<div id = "a">
+		<%= m.name %>
+	</div><br/>
+	<% @slno = 0 %>
+	<% @answers = Question.find(:all, :conditions => ['exam_group_id=? && student_additional_field_id=?', @exam_group, m.id]) %>
+	<% @answers.each do |a| %>
+	<% @slno = @slno+1  %>
+		<% if a.is_pass == 'comp' %>
+			<div class="question">
+				<%= @slno %>)
+				<%= a.passage %><br/>
+				<%= a.ques %>
+			</div><br/>
+		<% else %>
+			<div class="question">
+				<%= @slno %>)
+				<%= a.ques %>
+			</div><br/>
+		<% end %>
+		<% @fin = Answer.find_by_questions_id(a.id)%>
+		<% unless @fin.nil? %>
+			<% if @fin.visited == 1 %>
+				<% if (a.is_answer == @fin.answer) %>
+					<% if ((@fin.answer && a.is_answer) == 'ans1') %>
+						<div id= 'green'>
+						a) <%= a.ans1 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						a) <%= a.ans1 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans2') %>
+						<div id= 'green'>
+						b) <%= a.ans2 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						b) <%= a.ans2 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans3') %>
+						<div id= 'green'>
+						c) <%= a.ans3 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						c) <%= a.ans3 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans4') %>
+						<div id= 'green'>
+						d) <%= a.ans4 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						d) <%= a.ans4 %>
+						</div><br/>
+					<% end %>
+				<% else %>
+					<% if ((@fin.answer && a.is_answer) == 'ans1') %>
+						<div id= 'green'>
+						a) <%= a.ans4 %>
+						</div><br/>
+					<% elsif (@fin.answer == 'ans1') %>
+						<div id= 'red'>
+						a) <%= a.ans1 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						a) <%= a.ans1 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans2') %>
+						<div id= 'green'>
+						b) <%= a.ans2 %>
+						</div><br/>
+					<% elsif (@fin.answer == 'ans2') %>
+						<div id= 'red'>
+						b) <%= a.ans2 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						b) <%= a.ans2 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans3') %>
+						<div id= 'green'>
+						c) <%= a.ans3 %>
+						</div><br/>
+					<% elsif (@fin.answer == 'ans3') %>
+						<div id= 'red'>
+						c) <%= a.ans3 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						c) <%= a.ans3 %>
+						</div><br/>
+					<% end %>
+					<% if ((@fin.answer && a.is_answer) == 'ans4') %>
+						<div id= 'green'>
+						d) <%= a.ans4 %>
+						</div><br/>
+					<% elsif (@fin.answer == 'ans4') %>
+						<div id= 'red'>
+						d) <%= a.ans4 %>
+						</div><br/>
+					<% else %>
+						<div id= 'black'>
+						d) <%= a.ans4 %>
+						</div><br/>
+					<% end %>
+				<% end %>
+			<% else %>
+				<% if (a.is_answer == 'ans1') %>
+					<div id= 'green'>
+					a) <%= a.ans1 %>
+					</div><br/>
+				<% else %>
+					<div id= 'black'>
+					a) <%= a.ans1 %>
+					</div><br/>
+				<% end %>
+				<% if (a.is_answer == 'ans2') %>
+					<div id= 'green'>
+					b) <%= a.ans2 %>
+					</div><br/>
+					<% else %>
+					<div id= 'black'>
+					b) <%= a.ans2 %>
+					</div><br/>
+				<% end %>
+				<% if (a.is_answer == 'ans3') %>
+					<div id= 'green'>
+					c) <%= a.ans3 %>
+					</div><br/>
+					<% else %>
+					<div id= 'black'>
+					c) <%= a.ans3 %>
+					</div><br/>
+				<% end %>
+				<% if (a.is_answer == 'ans4') %>
+					<div id= 'green'>
+					d) <%= a.ans4 %>
+					</div><br/>
+					<% else %>
+					<div id= 'black'>
+					d) <%= a.ans4 %>
+					</div><br/>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
+	<div id="skip">
+       <%= link_to "► Finish", :controller => 'users', :action => 'logout' %>
+    </div>
+</div>

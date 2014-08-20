@@ -1,0 +1,74 @@
+<div id="content-header">
+  <%= image_tag("/images/examination/show_exam.png") %>
+  <h1><%= "Technical" %></h1>
+  <h3><%= "Details" %></h3>
+  <div id="app-back-button">
+    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for :student, :url => {:action => 'technical'}, :id => @student.id, :html => {:multipart => true} do |s| %>
+    <%= error_messages_for 'student' %>
+    <div id="admission1-form">
+      <div id="necessary-field-notification"><%= t('legend1') %><span class="necessary-field">*</span> <%= t('legend2') %></div>
+
+      <div id="autofill_area">
+
+        <div class="label-field-pair-edit">
+          <label for="master_student_admission_no"><%= t('admission_no') %><span class="necessary-field">*</span></label>
+          <div class="text-input-bg"><%= s.text_field :admission_no %></div>
+        </div>
+
+
+        <div class="extender"></div>
+
+      </div>
+
+      <span class="span-sub-heading"><%= "Education Details" %></span>
+
+      <hr class="sub-heading"></hr>
+      <div class="label-field-pair">
+        <label for="master_student_first_name"><%= "Project Name" %><span class="necessary-field">*</span></label>
+        <div class="text-input-bg"><%= s.text_field :project_name %></div>
+      </div>
+
+      <hr class="label-underline"></hr>
+
+      <div class="label-field-pair">
+        <label for="master_student_first_name"><%= "Duration" %></label>
+        <div class="text-input-bg"><%= s.text_field :duration %></div>
+      </div>
+
+      <hr class="label-underline"></hr>
+
+      <div class="label-field-pair">
+        <label for="master_student_first_name"><%= "Duration" %></label>
+        <div class="option_text_field_bg"><%= s.text_area :project, :class => "mceEditor" %></div>
+      </div>
+      <div class="extender"></div>
+    </div>
+    <%= submit_tag "", :class => "submit_button", :value => "Finish" %>
+  <% end %>
+</div>
+<script type="text/javascript">
+tinyMCE.init({
+    mode : "textareas",
+    theme : "advanced",
+    plugins : "emotions,spellchecker,advhr,insertdatetime,preview", 
+
+    // Theme options - button# indicated the row# only
+    theme_advanced_buttons1 : "newdocument,cut,copy,paste,|,undo,redo,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+    theme_advanced_buttons2 : ",bullist,numlist,|,outdent,indent,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor,insertdate,inserttime,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",
+    theme_advanced_buttons3 : "",      
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_statusbar_location : "bottom",
+    theme_advanced_resizing : true
+});
+</script>

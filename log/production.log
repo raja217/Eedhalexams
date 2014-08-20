@@ -1,0 +1,1143 @@
+﻿
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-14 22:27:36) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 13095ms (View: 16, DB: 581) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-14 22:27:53) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 12ms (View: 8, DB: 2) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-14 22:28:01) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"roLyseZ5QR6la/5FUfvb9fU7/Qj0FHIbfAY8nn7Isvw=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/user/dashboard
+Completed in 126ms (DB: 118) | 302 Found [http://localhost/]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2014-03-14 22:28:01) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 568ms (View: 455, DB: 107) | 200 OK [http://localhost/user/dashboard]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-14 22:28:07) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "controller"=>"user", "user"=>{"username"=>"11", "password"=>"[FILTERED]"}}
+Redirected to http://192.168.20.1:3000/user/dashboard
+Completed in 9ms (DB: 1) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-14 22:28:07) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 357ms (View: 217, DB: 128) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing AnswersController#index (for 192.168.20.1 at 2014-03-14 22:28:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/index
+Completed in 220ms (View: 30, DB: 179) | 200 OK [http://192.168.20.1/answers]
+
+
+Processing AnswersController#exam (for 192.168.20.1 at 2014-03-14 22:28:12) [GET]
+  Parameters: {"action"=>"exam", "exam_group_id"=>"1", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/exam
+Completed in 73ms (View: 20, DB: 50) | 200 OK [http://192.168.20.1/exam_groups/1/answers/exam]
+
+
+Processing AnswersController#answer (for 192.168.20.1 at 2014-03-14 22:28:13) [GET]
+  Parameters: {"action"=>"answer", "exam_group_id"=>"1", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/answer
+Completed in 618ms (View: 146, DB: 466) | 200 OK [http://192.168.20.1/exam_groups/1/answers/answer]
+
+
+Processing AnswersController#start (for 192.168.20.1 at 2014-03-14 22:28:16) [POST]
+  Parameters: {"action"=>"start", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "student_additional_field"=>"1", "_"=>""}
+Completed in 55ms (View: 31, DB: 16) | 200 OK [http://192.168.20.1/answers/start]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:17) [POST]
+  Parameters: {"passed_question"=>"2", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 2", "_"=>"", "answer"=>"ans3"}
+Completed in 71ms (View: 7, DB: 24) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:18) [POST]
+  Parameters: {"passed_question"=>"23", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 3", "_"=>"", "answer"=>"ans3"}
+Completed in 23ms (View: 8, DB: 3) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:19) [POST]
+  Parameters: {"passed_question"=>"18", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 4", "_"=>"", "answer"=>"ans1"}
+Completed in 27ms (View: 11, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:19) [POST]
+  Parameters: {"passed_question"=>"8", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 5", "_"=>"", "answer"=>"ans4"}
+Completed in 28ms (View: 9, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:20) [POST]
+  Parameters: {"passed_question"=>"11", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 6", "_"=>"", "answer"=>"ans1"}
+Completed in 28ms (View: 12, DB: 7) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:20) [POST]
+  Parameters: {"passed_question"=>"1", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 7", "_"=>"", "answer"=>"ans4"}
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:20) [POST]
+  Parameters: {"passed_question"=>"10", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 8", "_"=>"", "answer"=>"ans1"}
+Completed in 25ms (View: 9, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:20) [POST]
+  Parameters: {"passed_question"=>"4", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 9", "_"=>"", "answer"=>"ans1"}
+Completed in 24ms (View: 11, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:20) [POST]
+  Parameters: {"passed_question"=>"26", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 10", "_"=>"", "answer"=>"ans2"}
+Completed in 23ms (View: 11, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:21) [POST]
+  Parameters: {"passed_question"=>"22", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 11", "_"=>"", "answer"=>"ans2"}
+Completed in 28ms (View: 14, DB: 3) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:21) [POST]
+  Parameters: {"passed_question"=>"9", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 12", "_"=>"", "answer"=>"ans1"}
+Completed in 20ms (View: 7, DB: 5) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:21) [POST]
+  Parameters: {"passed_question"=>"7", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 13", "_"=>"", "answer"=>"ans1"}
+Completed in 27ms (View: 8, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:21) [POST]
+  Parameters: {"passed_question"=>"15", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 14", "_"=>"", "answer"=>"ans1"}
+Completed in 27ms (View: 8, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:22) [POST]
+  Parameters: {"passed_question"=>"20", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 15", "_"=>"", "answer"=>"ans1"}
+Completed in 21ms (View: 8, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:22) [POST]
+  Parameters: {"passed_question"=>"12", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 16", "_"=>"", "answer"=>"ans2"}
+Completed in 20ms (View: 9, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:22) [POST]
+  Parameters: {"passed_question"=>"25", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 17", "_"=>"", "answer"=>"ans3"}
+Completed in 27ms (View: 10, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:22) [POST]
+  Parameters: {"passed_question"=>"17", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 18", "_"=>"", "answer"=>"ans2"}
+Completed in 27ms (View: 11, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:22) [POST]
+  Parameters: {"passed_question"=>"6", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 19", "_"=>"", "answer"=>"ans3"}
+Completed in 25ms (View: 9, DB: 8) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:23) [POST]
+  Parameters: {"passed_question"=>"5", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 20", "_"=>"", "answer"=>"ans2"}
+Completed in 29ms (View: 15, DB: 3) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:23) [POST]
+  Parameters: {"passed_question"=>"24", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 21", "_"=>"", "answer"=>"ans4"}
+Completed in 27ms (View: 13, DB: 6) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:23) [POST]
+  Parameters: {"passed_question"=>"13", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 22", "_"=>"", "answer"=>"ans3"}
+Completed in 26ms (View: 9, DB: 5) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:23) [POST]
+  Parameters: {"passed_question"=>"21", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 23", "_"=>"", "answer"=>"ans1"}
+Completed in 27ms (View: 9, DB: 2) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:23) [POST]
+  Parameters: {"passed_question"=>"28", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 24", "_"=>"", "answer"=>"ans3"}
+Completed in 25ms (View: 11, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:24) [POST]
+  Parameters: {"passed_question"=>"19", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 25", "_"=>"", "answer"=>"ans3"}
+Completed in 125ms (View: 112, DB: 3) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:24) [POST]
+  Parameters: {"passed_question"=>"27", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 26", "_"=>"", "answer"=>"ans2"}
+Completed in 22ms (View: 9, DB: 3) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:24) [POST]
+  Parameters: {"passed_question"=>"3", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 27", "_"=>"", "answer"=>"ans1"}
+Completed in 27ms (View: 9, DB: 5) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:24) [POST]
+  Parameters: {"passed_question"=>"16", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 28", "_"=>"", "answer"=>"ans3"}
+Completed in 21ms (View: 9, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:25) [POST]
+  Parameters: {"passed_question"=>"14", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 29", "_"=>"", "answer"=>"ans1"}
+Completed in 25ms (View: 11, DB: 4) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:25) [POST]
+  Parameters: {"passed_question"=>"29", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 30", "_"=>"", "answer"=>"ans1"}
+Completed in 28ms (View: 14, DB: 5) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#update (for 192.168.20.1 at 2014-03-14 22:28:25) [POST]
+  Parameters: {"passed_question"=>"30", "action"=>"update", "authenticity_token"=>"lgkGTQkQIqlegYFW0G7NNKnm1mUew6rJV+7EKZ8n9RM=", "exam_group_id"=>"1", "controller"=>"answers", "s"=>" 31", "_"=>"", "answer"=>"ans3"}
+Completed in 59ms (View: 2, DB: 48) | 200 OK [http://192.168.20.1/answers/update]
+
+
+Processing AnswersController#final (for 192.168.20.1 at 2014-03-14 22:28:27) [GET]
+  Parameters: {"action"=>"final", "exam_group_id"=>"1", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/final
+Completed in 120ms (View: 11, DB: 102) | 200 OK [http://192.168.20.1/exam_groups/1/answers/final]
+
+
+Processing AnswersController#result (for 192.168.20.1 at 2014-03-14 22:28:28) [GET]
+  Parameters: {"action"=>"result", "exam_group_id"=>"1", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/result
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://192.168.20.1/exam_groups/1/answers/result]
+
+
+Processing AnswersController#sheet (for 192.168.20.1 at 2014-03-14 22:28:29) [GET]
+  Parameters: {"action"=>"sheet", "exam_group_id"=>"1", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/sheet
+Completed in 53ms (View: 44, DB: 3) | 200 OK [http://192.168.20.1/exam_groups/1/answers/sheet]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-14 22:29:00) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 13ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-14 22:29:06) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"sHk7yWuRqsWxqL8a42RgaKvhNfrMKM9aRvvE1Xw++Q4=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/user/dashboard
+Completed in 3ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2014-03-14 22:29:06) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 15ms (View: 12, DB: 1) | 200 OK [http://localhost/user/dashboard]
+
+
+Processing ExamController#index (for 127.0.0.1 at 2014-03-14 22:29:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 29ms (View: 18, DB: 3) | 200 OK [http://localhost/exam]
+
+
+Processing ExamController#create_exam (for 127.0.0.1 at 2014-03-14 22:29:10) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 27ms (View: 21, DB: 2) | 200 OK [http://localhost/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 127.0.0.1 at 2014-03-14 22:29:11) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"sHk7yWuRqsWxqL8a42RgaKvhNfrMKM9aRvvE1Xw++Q4=", "controller"=>"exam", "_"=>""}
+Completed in 14ms (View: 2, DB: 4) | 200 OK [http://localhost/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 127.0.0.1 at 2014-03-14 22:29:12) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 96ms (View: 34, DB: 48) | 200 OK [http://localhost/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#show (for 127.0.0.1 at 2014-03-14 22:29:13) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 34ms (View: 21, DB: 4) | 200 OK [http://localhost/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2014-03-14 22:29:15) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 49ms (View: 38, DB: 1) | 200 OK [http://localhost/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-03-14 22:29:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2014-03-14 22:29:18) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 107ms (View: 100, DB: 5) | 200 OK [http://localhost/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2014-03-14 22:30:02) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 484ms (View: 382, DB: 46) | 200 OK [http://localhost/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2014-03-14 22:30:13) [POST]
+  Parameters: {"commit"=>"► Create", "batch_id"=>"1", "action"=>"create", "authenticity_token"=>"sHk7yWuRqsWxqL8a42RgaKvhNfrMKM9aRvvE1Xw++Q4=", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"", "ans1"=>"", "ans2"=>"", "passage"=>"<p>adds<sup>2</sup></p>", "ans3"=>"", "ans4"=>""}}
+
+ActionView::MissingTemplate (Missing template questions/create.erb in view path app/views:vendor/plugins/tinymce_hammer/app/views:c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/declarative_authorization-0.5.1/app/views):
+  app/controllers/application_controller.rb:292:in `render'
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2014-03-14 22:30:25) [POST]
+  Parameters: {"commit"=>"► Create", "batch_id"=>"1", "action"=>"create", "authenticity_token"=>"sHk7yWuRqsWxqL8a42RgaKvhNfrMKM9aRvvE1Xw++Q4=", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p>s</p>", "ans1"=>"<p>a</p>", "ans2"=>"<p>fd</p>", "passage"=>"<p>adds<sup>2</sup></p>", "ans3"=>"<p>c</p>", "ans4"=>"<p>s</p>"}, "is_answer"=>"ans2"}
+Redirected to http://localhost:3000/batches/1/exam_groups/1/modules/1/questions/new
+Completed in 49ms (DB: 42) | 302 Found [http://localhost/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2014-03-14 22:30:25) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2014-03-14 22:30:35) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 124ms (View: 116, DB: 5) | 200 OK [http://localhost/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-03-14 22:30:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2014-03-14 22:30:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"destroy", "controller"=>"questions"}
+Permission denied: No matching rules found for show for #<User id: 1, username: "admin", first_name: "Admin", last_name: "User", email: "noreply@fedena.com", admin: true, student: false, employee: false, guest: false, hashed_password: "b35b980142efebebfd9a597268022e34f8de0a21", salt: "JBQdv7p1", reset_password_code: nil, reset_password_code_until: nil, parent: nil> (roles [:admin, :archived_exam_reports], privileges [:show], context :questions).
+Redirected to http://localhost:3000/user/dashboard
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/questions/destroy]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2014-03-14 22:30:42) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 29ms (View: 21, DB: 0) | 200 OK [http://localhost/user/dashboard]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-15 09:55:42) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 12075ms (View: 16, DB: 796) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-15 09:56:05) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"Lr7d7knK8ho0mhLkjCfEdR/tut4K0WiCEK0G3KY3Utg=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/user/dashboard
+Completed in 94ms (DB: 78) | 302 Found [http://localhost/]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2014-03-15 09:56:05) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 624ms (View: 484, DB: 140) | 200 OK [http://localhost/user/dashboard]
+
+
+Processing ExamController#index (for 127.0.0.1 at 2014-03-15 09:56:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/exam]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 10:45:53) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 427ms (View: 385, DB: 32) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing ExamController#index (for 192.168.20.1 at 2014-03-15 10:45:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 34ms (View: 23, DB: 3) | 200 OK [http://192.168.20.1/exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-15 10:45:55) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 29ms (View: 20, DB: 4) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-15 10:45:58) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 21ms (View: 14, DB: 3) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 192.168.20.1 at 2014-03-15 10:45:59) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"kOfI3jDPZ92maIIKyfrQt5BjgD4poikNoSc+H58toZE=", "controller"=>"exam", "_"=>""}
+Completed in 18ms (View: 4, DB: 8) | 200 OK [http://192.168.20.1/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 192.168.20.1 at 2014-03-15 10:46:00) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 69ms (View: 41, DB: 11) | 200 OK [http://192.168.20.1/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#new (for 192.168.20.1 at 2014-03-15 10:46:01) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/new
+Completed in 119ms (View: 23, DB: 6) | 200 OK [http://192.168.20.1/batches/1/exam_groups/new]
+
+
+Processing ExamGroupsController#show (for 192.168.20.1 at 2014-03-15 10:46:04) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 31ms (View: 19, DB: 3) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 10:46:05) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 58ms (View: 40, DB: 6) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 10:46:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-15 10:46:07) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 56ms (View: 20, DB: 29) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 14:36:05) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 12185ms (View: 70, DB: 258) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-15 14:36:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 21ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 14:36:30) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://192.168.20.1/user/dashboard
+Completed in 81ms (DB: 69) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 14:36:30) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 474ms (View: 410, DB: 60) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-15 15:02:27) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 37ms (View: 13, DB: 15) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 15:02:30) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Redirected to http://192.168.20.1/user/dashboard
+Filter chain halted as [:check_if_loggedin] rendered_or_redirected.
+Completed in 20ms (DB: 11) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 15:02:30) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 458ms (View: 448, DB: 7) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing ExamController#index (for 192.168.20.1 at 2014-03-15 15:02:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 130ms (View: 116, DB: 2) | 200 OK [http://192.168.20.1/exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-15 15:02:34) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 87ms (View: 30, DB: 52) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 192.168.20.1 at 2014-03-15 15:02:36) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "controller"=>"exam", "_"=>""}
+Completed in 99ms (View: 8, DB: 84) | 200 OK [http://192.168.20.1/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 192.168.20.1 at 2014-03-15 15:02:37) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 207ms (View: 140, DB: 55) | 200 OK [http://192.168.20.1/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#show (for 192.168.20.1 at 2014-03-15 15:02:38) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 53ms (View: 20, DB: 23) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:02:39) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 92ms (View: 44, DB: 39) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:02:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 15:11:46) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Redirected to http://192.168.20.1/user/dashboard
+Filter chain halted as [:check_if_loggedin] rendered_or_redirected.
+Completed in 25ms (DB: 17) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 15:11:46) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 421ms (View: 406, DB: 8) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing UserController#logout (for 192.168.20.1 at 2014-03-15 15:11:53) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"user"}
+Redirected to http://192.168.20.1/
+Completed in 8ms (DB: 2) | 302 Found [http://192.168.20.1/user/logout]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 15:11:53) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 23ms (View: 17, DB: 5) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 15:12:02) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://192.168.20.1/user/dashboard
+Completed in 5ms (DB: 0) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 15:12:02) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 303ms (View: 299, DB: 1) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing ExamController#index (for 192.168.20.1 at 2014-03-15 15:12:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 37ms (View: 25, DB: 2) | 200 OK [http://192.168.20.1/exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-15 15:12:04) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 33ms (View: 21, DB: 7) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 192.168.20.1 at 2014-03-15 15:12:06) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "controller"=>"exam", "_"=>""}
+Completed in 16ms (View: 4, DB: 6) | 200 OK [http://192.168.20.1/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 192.168.20.1 at 2014-03-15 15:12:07) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 66ms (View: 35, DB: 19) | 200 OK [http://192.168.20.1/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#show (for 192.168.20.1 at 2014-03-15 15:12:08) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 39ms (View: 20, DB: 10) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:12:09) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 64ms (View: 40, DB: 13) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:12:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#edit (for 192.168.20.1 at 2014-03-15 15:12:11) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"edit", "module_id"=>"1", "id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/edit
+Completed in 31ms (View: 21, DB: 2) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/1/edit]
+
+
+Processing QuestionsController#update (for 192.168.20.1 at 2014-03-15 15:12:19) [PUT]
+  Parameters: {"commit"=>"► Update", "batch_id"=>"1", "action"=>"update", "_method"=>"put", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "module_id"=>"1", "id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p><strong>One day when Kranti was walking on the street, one boy requested him to donate for cancer patient&rsquo;s welfare fund.&nbsp; He gave him a rupee more than half the money he had. He walked a few more steps. Then came a girl who requested him to donate for poor people's fund for which he gave two rupees more than half the money he had then.&nbsp; After that, again a boy approached him for an orphanage fund. He gave three rupees more than half of what he had.&nbsp; At last he had just one rupee remaining in his hand. How much amount did Ram have in his pocket when he started?</strong></p>", "ans1"=>"<p>Rs.72</p>", "ans2"=>"<p>Rs.58&nbsp;</p>", "passage"=>"", "ans3"=>"<p>Rs.35&nbsp;</p>", "ans4"=>"<p>Rs.42</p>"}, "is_answer"=>"ans4"}
+Redirected to http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions
+Completed in 133ms (DB: 8) | 302 Found [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:12:19) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 44ms (View: 34, DB: 4) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:12:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#edit (for 192.168.20.1 at 2014-03-15 15:12:26) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"edit", "module_id"=>"1", "id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/edit
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/1/edit]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-15 15:52:32) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Redirected to http://192.168.20.1:3000/user/dashboard
+Filter chain halted as [:check_if_loggedin] rendered_or_redirected.
+Completed in 24ms (DB: 19) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-15 15:52:32) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 417ms (View: 403, DB: 7) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing ExamController#index (for 192.168.20.1 at 2014-03-15 15:52:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 36ms (View: 24, DB: 2) | 200 OK [http://192.168.20.1/exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-15 15:52:35) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 33ms (View: 23, DB: 5) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 192.168.20.1 at 2014-03-15 15:52:36) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "controller"=>"exam", "_"=>""}
+Completed in 16ms (View: 5, DB: 6) | 200 OK [http://192.168.20.1/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 192.168.20.1 at 2014-03-15 15:52:37) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 74ms (View: 35, DB: 28) | 200 OK [http://192.168.20.1/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#show (for 192.168.20.1 at 2014-03-15 15:52:38) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 41ms (View: 22, DB: 13) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:52:40) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 53ms (View: 40, DB: 4) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:52:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering c:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-15 15:52:41) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 30ms (View: 18, DB: 6) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#edit (for 192.168.20.1 at 2014-03-15 15:52:49) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"edit", "module_id"=>"1", "id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/edit
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/1/edit]
+
+
+Processing QuestionsController#update (for 192.168.20.1 at 2014-03-15 15:52:56) [PUT]
+  Parameters: {"commit"=>"► Update", "batch_id"=>"1", "action"=>"update", "_method"=>"put", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "module_id"=>"1", "id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p>One day when Kranti was walking on the street, one boy requested him to donate for cancer patient&rsquo;s welfare fund.&nbsp; He gave him a rupee more than half the money he had. He walked a few more steps. Then came a girl who requested him to donate for poor people's fund for which he gave two rupees more than half the money he had then.&nbsp; After that, again a boy approached him for an orphanage fund. He gave three rupees more than half of what he had.&nbsp; At last he had just one rupee remaining in his hand. How much amount did Ram have in his pocket when he started?<sup>2222222</sup></p>", "ans1"=>"<p>Rs.72</p>", "ans2"=>"<p>Rs.58&nbsp;</p>", "passage"=>"", "ans3"=>"<p>Rs.35&nbsp;</p>", "ans4"=>"<p>Rs.42</p>"}, "is_answer"=>"ans4"}
+Redirected to http://192.168.20.1:3000/batches/1/exam_groups/1/modules/1/questions
+Completed in 100ms (DB: 3) | 302 Found [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:52:56) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 49ms (View: 38, DB: 5) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:52:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering c:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-15 15:54:09) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 433ms (View: 338, DB: 44) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#create (for 192.168.20.1 at 2014-03-15 15:54:24) [POST]
+  Parameters: {"commit"=>"► Create", "batch_id"=>"1", "action"=>"create", "authenticity_token"=>"bqFT9aAXHon8eV64QjirL0wM8ZuBy3JTyPuTT1vIRqE=", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p>adfsdgfsd<sup>sgsdfdf</sup></p>", "ans1"=>"<p>sfdsdf<sub>sdfsdf</sub></p>", "ans2"=>"<p>sd</p>", "passage"=>"", "ans3"=>"<p>sfg</p>", "ans4"=>"<p>sd</p>"}, "is_answer"=>"ans4"}
+Redirected to http://192.168.20.1:3000/batches/1/exam_groups/1/modules/1/questions/new
+Completed in 114ms (DB: 24) | 302 Found [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-15 15:54:24) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 26ms (View: 16, DB: 3) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-15 15:54:35) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 50ms (View: 41, DB: 2) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-15 15:54:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  c:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering c:/Online/public/404.html (404 Not Found)
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-16 19:24:11) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 11020ms (View: 24, DB: 447) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-17 23:02:39) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 11025ms (View: 16, DB: 105) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-17 23:03:58) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"login", "authenticity_token"=>"aY9dHyciV+Ac26P6TRSI3+qQs5R+dkJd/q9dLzmQQpo=", "controller"=>"user", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+Redirected to http://192.168.20.1/user/dashboard
+Completed in 80ms (DB: 72) | 302 Found [http://192.168.20.1/]
+
+
+Processing UserController#dashboard (for 192.168.20.1 at 2014-03-17 23:03:59) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"user"}
+Rendering template within layouts/dashboard
+Rendering user/dashboard
+Completed in 469ms (View: 438, DB: 29) | 200 OK [http://192.168.20.1/user/dashboard]
+
+
+Processing ExamController#index (for 192.168.20.1 at 2014-03-17 23:04:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/index
+Completed in 68ms (View: 60, DB: 0) | 200 OK [http://192.168.20.1/exam]
+
+
+Processing ExamController#create_exam (for 192.168.20.1 at 2014-03-17 23:04:04) [GET]
+  Parameters: {"action"=>"create_exam", "controller"=>"exam"}
+Rendering template within layouts/application
+Rendering exam/create_exam
+Completed in 69ms (View: 30, DB: 34) | 200 OK [http://192.168.20.1/exam/create_exam]
+
+
+Processing ExamController#update_batch (for 192.168.20.1 at 2014-03-17 23:04:05) [POST]
+  Parameters: {"action"=>"update_batch", "course_name"=>"1", "authenticity_token"=>"aY9dHyciV+Ac26P6TRSI3+qQs5R+dkJd/q9dLzmQQpo=", "controller"=>"exam", "_"=>""}
+Completed in 42ms (View: 5, DB: 31) | 200 OK [http://192.168.20.1/exam/update_batch]
+
+
+Processing ExamGroupsController#index (for 192.168.20.1 at 2014-03-17 23:04:06) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/index
+Completed in 126ms (View: 40, DB: 73) | 200 OK [http://192.168.20.1/batches/1/exam_groups]
+
+
+Processing ExamGroupsController#show (for 192.168.20.1 at 2014-03-17 23:04:07) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"show", "id"=>"1", "controller"=>"exam_groups"}
+Rendering template within layouts/application
+Rendering exam_groups/show
+Completed in 40ms (View: 19, DB: 13) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-17 23:04:08) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 92ms (View: 52, DB: 29) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-17 23:04:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-17 23:04:11) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 28ms (View: 19, DB: 3) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-17 23:07:43) [GET]
+
+ActionController::RoutingError (No route matches "/batches/1/exam_groups/1/modules/1/questions/D:/3%20Idiots/app_fedena_logo.png" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing QuestionsController#create (for 192.168.20.1 at 2014-03-17 23:08:12) [POST]
+  Parameters: {"commit"=>"► Create", "batch_id"=>"1", "action"=>"create", "authenticity_token"=>"aY9dHyciV+Ac26P6TRSI3+qQs5R+dkJd/q9dLzmQQpo=", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p>asd<sup>e</sup></p>", "ans1"=>"<p>er</p>", "ans2"=>"<p>fsdg</p>", "passage"=>"<ol>\r\n<li>asdasdaasdas<img src=\"D:\\3 Idiots\\app_fedena_logo.png\" alt=\"\" /></li>\r\n</ol>", "ans3"=>"<p>dfdf</p>", "ans4"=>"<h1>d</h1>"}}
+
+ActionView::MissingTemplate (Missing template questions/create.erb in view path app/views:vendor/plugins/tinymce_hammer/app/views:C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/declarative_authorization-0.5.1/app/views):
+  app/controllers/application_controller.rb:292:in `render'
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/500.html (500 Internal Server Error)
+
+
+Processing QuestionsController#create (for 192.168.20.1 at 2014-03-17 23:08:18) [POST]
+  Parameters: {"commit"=>"► Create", "batch_id"=>"1", "action"=>"create", "authenticity_token"=>"aY9dHyciV+Ac26P6TRSI3+qQs5R+dkJd/q9dLzmQQpo=", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions", "question"=>{"ques"=>"<p>asd<sup>e</sup></p>", "ans1"=>"<p>er</p>", "ans2"=>"<p>fsdg</p>", "passage"=>"<ol>\r\n<li>asdasdaasdas<img src=\"D:\\3 Idiots\\app_fedena_logo.png\" alt=\"\" /></li>\r\n</ol>", "ans3"=>"<p>dfdf</p>", "ans4"=>"<h1>d</h1>"}, "is_answer"=>"ans4"}
+Redirected to http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new
+Completed in 28ms (DB: 21) | 302 Found [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions]
+
+
+Processing QuestionsController#new (for 192.168.20.1 at 2014-03-17 23:08:18) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"new", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/new]
+
+
+Processing QuestionsController#index (for 192.168.20.1 at 2014-03-17 23:08:22) [GET]
+  Parameters: {"batch_id"=>"1", "action"=>"index", "module_id"=>"1", "exam_group_id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 49ms (View: 41, DB: 3) | 200 OK [http://192.168.20.1/batches/1/exam_groups/1/modules/1/questions/]
+
+
+Processing ApplicationController#index (for 192.168.20.1 at 2014-03-17 23:08:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/questions/index.css" with {:method=>:get}):
+  thin (1.6.2) lib/thin/connection.rb:86:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.2) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.2) lib/thin/connection.rb:53:in `process'
+  thin (1.6.2) lib/thin/connection.rb:39:in `receive_data'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+  thin (1.6.2) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.2) lib/thin/server.rb:162:in `start'
+
+Rendering C:/Online/public/404.html (404 Not Found)
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-18 20:22:22) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 11454ms (View: 14, DB: 99) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:22:34) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:24:34) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://www.online.com/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:24:37) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://www.online.com/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:24:43) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 9ms (View: 6, DB: 3) | 200 OK [http://www.online.com/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:24:55) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:27:23) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://www.online.com/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-18 20:38:38) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 23ms (View: 8, DB: 1) | 200 OK [http://www.online.com/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-18 20:38:41) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 31ms (View: 9, DB: 3) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 192.168.20.1 at 2014-03-18 20:38:44) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 26ms (View: 9, DB: 15) | 200 OK [http://192.168.20.1/]
+
+
+Processing UserController#login (for 127.0.0.1 at 2014-03-19 11:41:16) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user"}
+Rendering template within layouts/login
+Rendering user/login
+Completed in 11366ms (View: 14, DB: 130) | 200 OK [http://www.online.com/]
